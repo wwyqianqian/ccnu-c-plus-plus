@@ -7,7 +7,7 @@ class CArray {
         int size;
         int *p;
     public:
-    	CArray(int a = 0);
+        CArray(int a = 0);
         CArray(CArray & ca);
         ~CArray();
         CArray &operator=(const CArray &ca);
@@ -21,7 +21,7 @@ class CArray {
 };
 
 CArray::CArray(int a) {
-	size = a;
+    size = a;
     if (a == 0) {
         p = nullptr;
     } else {
