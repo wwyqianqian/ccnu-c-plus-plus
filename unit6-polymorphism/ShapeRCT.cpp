@@ -10,15 +10,19 @@ public:
     string name;
     Shape(string _name): name(_name) {};
     virtual double Area() = 0; // 纯虚函数
-    virtual void PriIndex() = 0;
+    void PriIndex(); // 注意这里 virtual 去掉了
 };
+
+// 三个形状各自写的 PriIndex 合并成 Shape 的 PriIndex()
+void Shape::PriIndex() {
+    cout << name << ": " << Area() << endl;
+}
 
 class Rectangle : public Shape {
 public:
     int width, length; // 矩形的宽、长
     Rectangle(): Shape("Rectangle") {};
     virtual double Area();
-    virtual void PriIndex();
 };
 
 class Circle : public Shape {
@@ -26,7 +30,6 @@ public:
     int radius; // 圆的半径
     Circle(): Shape("Circle") {};
     virtual double Area();
-    virtual void PriIndex();
 };
 
 class Triangle : public Shape {
@@ -34,33 +37,20 @@ public:
     int a, b, c; // 三角形三边长
     Triangle(): Shape("Triangle") {};
     virtual double Area();
-    virtual void PriIndex();
-	
 };
 
 double Rectangle::Area() { // 注意这里是 double
     return width * length;
 }
-void Rectangle::PriIndex() {
-    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
-}
 
 double Circle::Area() {
     return PI * radius * radius;
-}
-void Circle::PriIndex() {
-    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
 }
 
 double Triangle::Area() {
     double heron = (a + b + c) / 2.0;
     return sqrt(heron * (heron - a) * (heron - b) * (heron - c)); // 海伦公式：利用三角形的三边长直接求面积
 }
-void Triangle::PriIndex() {
-    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
-}
-
-// 三个PriIndex现在完全一样了有没有发现（
 
 int main() {
     Shape *pshape;
