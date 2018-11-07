@@ -55,9 +55,10 @@ void Triangle::PriIndex() {
 
 int main() {
     Shape *p[10]; // 定义基类指针数组，动态内存分配，数组存放派生类对象指针
-    Rectangle *pr;
-    Circle *pc;
-    Triangle *pt;
+    Shape *pshape;
+    // Rectangle *pr;
+    // Circle *pc;
+    // Triangle *pt;
 
     int n;
     cin >> n;
@@ -66,21 +67,22 @@ int main() {
         cin >> c;
         switch(c) {
             case 'R': 
-                pr = new Rectangle;
-                cin >> pr->width >> pr->length; // 不能写 '.' 形式
-                p[i] = pr;
+                pshape = new Rectangle;
+                // (Rectangle *) pshape 把 pshape 显示类型转换为 Rectangle 指针
+                // 不然编译器不知道这个 pshape 指向的 Shape 是个 Rectangle (不知道它有 width 和 length)
+                // 直接 pshape->width 的话会报错
+                cin >> ((Rectangle *)pshape)->width >> ((Rectangle *)pshape)->length; // 不能写 '.' 形式
                 break;
             case 'C':
-                pc = new Circle;
-                cin >> pc->radius;
-                p[i] = pc;
+                pshape = new Circle;
+                cin >> ((Circle *)pshape)->radius;
                 break;
             case 'T':
-                pt = new Triangle;
-                cin >> pt->a >> pt->b >> pt->c;
-                p[i] = pt;
+                pshape = new Triangle;
+                cin >> ((Triangle *)pshape)->a >> ((Triangle *)pshape)->b >> ((Triangle *)pshape)->c;
                 break;
         }
+        p[i] = pshape;
     }
     // 按照面积进行大小排序
     
