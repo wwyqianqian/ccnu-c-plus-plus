@@ -21,21 +21,24 @@ void Shape::PriIndex() {
 class Rectangle : public Shape {
 public:
     int width, length; // 矩形的宽、长
-    Rectangle(): Shape("Rectangle") {};
+    // 升级构造函数，一次性赋值
+    Rectangle(int _width, int _length): Shape("Rectangle"), width(_width), length(_length) {};
     virtual double Area();
 };
 
 class Circle : public Shape {
 public:
     int radius; // 圆的半径
-    Circle(): Shape("Circle") {};
+    // 升级构造函数，一次性赋值
+    Circle(int _radius): Shape("Circle"), radius(_radius) {};
     virtual double Area();
 };
 
 class Triangle : public Shape {
 public:
     int a, b, c; // 三角形三边长
-    Triangle(): Shape("Triangle") {};
+    // 升级构造函数，一次性赋值
+    Triangle(int _a, int _b, int _c): Shape("Triangle"), a(_a), b(_b), c(_c) {};
     virtual double Area();
 };
 
@@ -66,20 +69,32 @@ int main() {
         char c;
         cin >> c;
         switch(c) {
-            case 'R': 
-                pshape = new Rectangle;
-                // (Rectangle *) pshape 把 pshape 显示类型转换为 Rectangle 指针
-                // 不然编译器不知道这个 pshape 指向的 Shape 是个 Rectangle (不知道它有 width 和 length)
-                // 直接 pshape->width 的话会报错
-                cin >> ((Rectangle *)pshape)->width >> ((Rectangle *)pshape)->length; // 不能写 '.' 形式
+            case 'R':
+                //pshape = new Rectangle;
+                // // (Rectangle *) pshape 把 pshape 显示类型转换为 Rectangle 指针
+                // // 不然编译器不知道这个 pshape 指向的 Shape 是个 Rectangle (不知道它有 width 和 length)
+                // // 直接 pshape->width 的话会报错
+                // cin >> ((Rectangle *)pshape)->width >> ((Rectangle *)pshape)->length; // 不能写 '.' 形式
+                // 构造函数升级以后
+                int width, length;
+                cin >> width >> length;
+                pshape = new Rectangle(width, length);
                 break;
             case 'C':
-                pshape = new Circle;
-                cin >> ((Circle *)pshape)->radius;
+                // pshape = new Circle;
+                // cin >> ((Circle *)pshape)->radius;
+                // 构造函数升级以后
+                int radius;
+                cin >> radius;
+                pshape = new Circle(radius);
                 break;
             case 'T':
-                pshape = new Triangle;
-                cin >> ((Triangle *)pshape)->a >> ((Triangle *)pshape)->b >> ((Triangle *)pshape)->c;
+                // pshape = new Triangle;
+                // cin >> ((Triangle *)pshape)->a >> ((Triangle *)pshape)->b >> ((Triangle *)pshape)->c;
+                // 构造函数升级以后
+                int a, b, c;
+                cin >> a >> b >> c;
+                pshape = new Triangle(a, b, c);
                 break;
         }
         p[i] = pshape;
