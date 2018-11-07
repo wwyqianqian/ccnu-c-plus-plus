@@ -5,6 +5,10 @@ const double PI = 3.14159;
 
 class Shape {
 public:
+    // 加上这个 name 变量，方便在任何时候随便拿到一个 shape 变量的时候有办法知道它是什么类型的
+    // 比如判断两个矩形是否相同的时候，先判断输入是不是矩形比较好
+    string name;
+    Shape(string _name): name(_name) {};
     virtual double Area() = 0; // 纯虚函数
     virtual void PriIndex() = 0;
 };
@@ -12,6 +16,7 @@ public:
 class Rectangle : public Shape {
 public:
     int width, length; // 矩形的宽、长
+    Rectangle(): Shape("Rectangle") {};
     virtual double Area();
     virtual void PriIndex();
 };
@@ -19,6 +24,7 @@ public:
 class Circle : public Shape {
 public:
     int radius; // 圆的半径
+    Circle(): Shape("Circle") {};
     virtual double Area();
     virtual void PriIndex();
 };
@@ -26,6 +32,7 @@ public:
 class Triangle : public Shape {
 public:
     int a, b, c; // 三角形三边长
+    Triangle(): Shape("Triangle") {};
     virtual double Area();
     virtual void PriIndex();
 	
@@ -35,14 +42,14 @@ double Rectangle::Area() { // 注意这里是 double
     return width * length;
 }
 void Rectangle::PriIndex() {
-    cout << "Rectangle: " << Area() << endl;
+    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
 }
 
 double Circle::Area() {
     return PI * radius * radius;
 }
 void Circle::PriIndex() {
-    cout << "Circle: " << Area() << endl;
+    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
 }
 
 double Triangle::Area() {
@@ -50,11 +57,12 @@ double Triangle::Area() {
     return sqrt(heron * (heron - a) * (heron - b) * (heron - c)); // 海伦公式：利用三角形的三边长直接求面积
 }
 void Triangle::PriIndex() {
-    cout << "Triangle: " << Area() << endl;
+    cout << name << ": " << Area() << endl; // 改成加了个 name 成员变量以后，就可以这么写了
 }
 
+// 三个PriIndex现在完全一样了有没有发现（
+
 int main() {
-    Shape *p[10]; // 定义基类指针数组，动态内存分配，数组存放派生类对象指针
     Shape *pshape;
     // Rectangle *pr;
     // Circle *pc;
@@ -62,6 +70,8 @@ int main() {
 
     int n;
     cin >> n;
+    // 拿到输入的形状个数以后再定义 Shape 指针数组大小，节省空间
+    Shape *p[n]; // 定义基类指针数组，动态内存分配，数组存放派生类对象指针
     for (int i = 0; i < n; ++i) {
         char c;
         cin >> c;
