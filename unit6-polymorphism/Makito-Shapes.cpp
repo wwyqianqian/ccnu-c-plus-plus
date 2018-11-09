@@ -51,7 +51,12 @@ double Triangle::Area()
 }
 void Triangle::PriIndex() { cout << "Triangle: " << Area() << endl; }
 
-// 魔法交换 (不用新变量)
+// Xor swapping
+// Can even be used on pointer addresses
+// Original variables are wrapped by parentheses. e.g. (x), (y)
+// x = (x) ^ (y)
+// y = x ^ (y) => (x) ^ (y) ^ (y) => (x)
+// x = x ^ y => (x) ^ (y) ^ (x) => y
 void swap(Shape **shape1, Shape **shape2)
 {
     shape1 = (Shape **)((unsigned long)shape1 ^ (unsigned long)shape2);
@@ -59,33 +64,41 @@ void swap(Shape **shape1, Shape **shape2)
     shape2 = (Shape **)((unsigned long)shape1 ^ (unsigned long)shape2);
 }
 
-// 快排-原地法分割
 int partition(Shape **shape, int left, int right)
 {
+    // select the right-most element as the pivot
     Shape *pivotShape = *(shape + right);
     double pivotArea = pivotShape->Area();
+    // store current swappable index, also helpful while restoring the pivot
     int lastIdx = left;
+    // iterate from left to right except the right-most protected pivot
     for (int i = left; i < right; i++)
     {
         double area = (*(shape + i))->Area();
         if (area < pivotArea)
         {
+            // found an element less than the pivot
+            // swap it with the element at current swappable index
             swap(*(shape + lastIdx), *(shape + i));
+            // move to next swappable index
             lastIdx++;
         }
     }
+    // restore the protected pivot by swapping it with the element at current
+    // swappable index
     swap(*(shape + lastIdx), *(shape + right));
+    // pivot index used in this partition
     return lastIdx;
 }
 
-// 快速排序 (默认pivot就以最右元素惹)
-void sort(Shape **shape, int left, int right)
+// An implementation of quick sort
+void quicksort(Shape **shape, int left, int right)
 {
     if (left >= right)
         return;
     int pivot = partition(shape, left, right);
-    sort(shape, left, pivot);
-    sort(shape, pivot + 1, right);
+    quicksort(shape, left, pivot);
+    quicksort(shape, pivot + 1, right);
 }
 
 int main()
@@ -122,7 +135,7 @@ int main()
     }
     // 按照面积进行大小排序
 
-    sort(p, 0, n - 1);
+    quicksort(p, 0, n - 1);
 
     // 排序后输出结果
     for (int i = 0; i < n; ++i)
