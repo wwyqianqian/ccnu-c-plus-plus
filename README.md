@@ -36,3 +36,8 @@
 * [上一题的快排实现](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/Makito-Shapes.cpp) by @SumiMakito<br>考察：基类指针数组
 
 #### 第七次上机
+
+* [补写函数实现输出](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/DoFun.cpp) <br>考察：virtual 的用法
+* []() <br>考察：
+* []() <br>考察：
+* []() <br>考察：
