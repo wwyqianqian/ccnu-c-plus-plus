@@ -32,7 +32,7 @@
 #### 第六次上机
 
 * [设计二元组 MyPoint 类，求两点间距离，再设计 ThreeDPoint 类，继承  MyPoint](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit5-inheritance/ThreeDPoint.cpp) <br>考察：继承和派生，protected 成员变量的使用
-* [输入一定格式的图形参数，按照面积从小到大输出(二分查找实现) ，注意可拓展性 by @gl14916](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/ShapeRCT.cpp) <br>考察：纯虚函数，多态的写法
-* [上一题的快排实现 by @SumiMakito](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/Makito-Shapes.cpp) <br>考察：基类指针数组
+* [输入一定格式的图形参数，按照面积从小到大输出(二分查找实现) ，注意可拓展性](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/ShapeRCT.cpp) by @gl14916 <br>考察：纯虚函数，多态的写法
+* [上一题的快排实现](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/Makito-Shapes.cpp) by @SumiMakito<br>考察：基类指针数组
 
 #### 第七次上机
