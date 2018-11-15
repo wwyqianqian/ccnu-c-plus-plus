@@ -38,6 +38,6 @@
 #### 第七次上机
 
 * [补写函数实现输出](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit6-polymorphism/DoFun.cpp) <br>考察：virtual 的用法
-* []() <br>考察：
+* [寻找两个 string 公有字符](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit7-class-string/common.cpp) <br>考察：String 类简单用法
 * []() <br>考察：
 * []() <br>考察：
