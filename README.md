@@ -41,3 +41,19 @@
 * [寻找两个 string 公有字符](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit7-class-string/common.cpp) <br>考察：String 类简单用法
 * [判断 string 是否回文](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit7-class-string/isPalindrome.cpp) <br>考察：String 类简单用法
 * [自己手动实现一个 String 类，重写函数](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit7-class-string/string.cpp) <br>考察：这道题太刺激了！我非常喜欢orz
+
+#### 期中检测
+
+* [对文件进行拷贝，要求写成命令行模式](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit8-file/copyFile2.cpp) <br>考察：文件操作
+* [设计 Complex 类，实现虚数 + - & / += -= 「」 ++ -- ++ -- << >> 等等运算符重载](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit4-overload-operator/Complex.cpp) <br>考察：运算符重载
+
+#### 第八次上机
+
+* [设计函数模板 compareArray 比较数组是否是有序的](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit9-template/compareArray.cpp) <br>考察：template
+* [补充 ArraySum 模板，实现要求的输出](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit9-template/ArraySum.cpp)  by @gl14916<br>考察：template、数组指针
+* [设计类模板 Stack 并实现栈的功能](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit9-template/stack.cpp) <br>考察：类模板、stack 功能
+
+#### 第九次上机
+
+* [设计函数 F，实现规定输出结果](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit9-template/F.cpp) <br>考察：函数指针、函数模板
+* [使用 list 实现固定输出](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/lists.cpp) <br>考察：STL 的使用、list、迭代器等等
