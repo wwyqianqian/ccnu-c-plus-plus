@@ -25,7 +25,7 @@ int main() {
     map<string, int> mp;
     ifstream f;
     string str;
-    f.open("article.txt", ios::in);
+    f.open("qwq-1.txt", ios::in);
     if (!f.eof()) {
         while (getline(f, str)) {
             auto search = st.find(str);
@@ -46,7 +46,9 @@ int main() {
     }
 
     sort(vt.begin(), vt.end(), sortBySec); 
-    for (vit = vt.begin(); vit != vt.end(); ++vit) {
+
+    int i = 0;
+    for (vit = vt.begin(), i; i < 20; ++vit, ++i) {
         cout << vit->first << ' ' << vit->second << endl;
     }
 
@@ -55,3 +57,25 @@ int main() {
 
 }
 
+
+//  ~/Desktop  ./a.out                            652ms  Sat Dec 22 21:52:49 2018
+// loss 73
+// person 73
+// experience 50
+// lost 44
+// think 33
+// process 28
+// relationship 26
+// way 26
+// presence 26
+// people 25
+// one 24
+// grief 24
+// someone 23
+// grieving 21
+// present 20
+// would 19
+// may 18
+// future 18
+// differences 16
+// often 16
