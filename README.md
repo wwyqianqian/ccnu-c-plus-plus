@@ -63,3 +63,14 @@
 * [使用 STL 实现给定范围内的排序](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/compare.cpp) <br>考察：内置 sort
 * [设计 Rule 函数/结构，按照不同的规则要求排序](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/Point.cpp) <br>考察：自定义 sort
 * [使用 set 实现 add/ask/del 命令](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/mtst.cpp) <br>考察：multiset/set，iterator  的使用
+
+#### 第十一次上机（期末作业）
+
+* [低数量级的词频统计](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/WordFrequency1.cpp)
+* [给一篇 paper ，统计词频前 20 高的单词并输出次数，要求排除 stopwords](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/WordFrequency2.cpp)
+  * [Paper 原文](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/words/file.doc)
+  * [对原文（file.doc）进行预处理，去掉所有标点符号，大小写转换等等，得到方便处理的文章 file.txt](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/words/file.txt)
+  * [代码 file.cpp 把处理后的 file.txt 按照文章词与词之间的空格来换行，形成了一行一个词语的 words.txt](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/words/file.cpp)
+  * [words.txt](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/words/words.txt)
+  * [不进行统计的停用词列表](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/words/stopWords.txt)
+* [使用 C11 特性，简化上面的代码](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/WordFrequency2.c11.cpp)
