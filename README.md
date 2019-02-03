@@ -57,3 +57,9 @@
 
 * [设计函数 F，实现规定输出结果](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit9-template/F.cpp) <br>考察：函数指针、函数模板
 * [使用 list 实现固定输出](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/lists.cpp) <br>考察：STL 的使用、list、迭代器等等
+
+#### 第十次上机
+
+* [使用 STL 实现给定范围内的排序](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/compare.cpp) <br>考察：内置 sort
+* [设计 Rule 函数/结构，按照不同的规则要求排序](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/Point.cpp) <br>考察：自定义 sort
+* [使用 set 实现 add/ask/del 命令](https://github.com/wwyqianqian/ccnu-c-plus-plus/blob/master/unit10-STL/mtst.cpp) <br>考察：multiset/set，iterator  的使用
